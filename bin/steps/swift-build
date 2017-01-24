@@ -11,7 +11,7 @@ git checkout $TOOLBOXTAG;
 rm -rf .swift-version
 
 echo "Compiling...";
-swift build -Xswiftc -DNO_ANIMATION;
+swift build --verbose -Xswiftc -DNO_ANIMATION;
 
 echo "Installing...";
 mv .build/debug/Executable ../vapor;
