@@ -3,15 +3,15 @@ cd $BUILD_DIR
 puts-step "Installing toolbox"
 
 echo "Downloading...";
-git clone https://github.com/vapor/toolbox vapor-toolbox > /dev/null 2>&1;
+git clone https://github.com/vapor/toolbox vapor-toolbox;
 cd vapor-toolbox;
 
 TOOLBOXTAG=$(git describe --tags);
-git checkout $TOOLBOXTAG > /dev/null 2>&1;
+git checkout $TOOLBOXTAG;
 rm -rf .swift-version
 
 echo "Compiling...";
-swift build -Xswiftc -DNO_ANIMATION > /dev/null;
+swift build -Xswiftc -DNO_ANIMATION;
 
 echo "Installing...";
 mv .build/debug/Executable ../vapor;
